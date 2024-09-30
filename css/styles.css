@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#monthYear {
+    text-align: center;
+    font-size: 2rem;
+    margin: 3% 0;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.day {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2%;
+    text-align: center;
+}
+
+.day h2 {
+    margin: 0;
+}
+
+.day-row {
+    display: contents;
+}
+
+.day p {
+    margin: 5px 0;
+}
+
+#listaBomberos {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-eliminar {
+    margin-left: 10px;
+    background-color: #dc3545;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+form {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form input, form select {
+    padding: 8px;
+    margin: 5px;
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+    #calendar {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
