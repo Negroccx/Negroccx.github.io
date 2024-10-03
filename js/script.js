@@ -255,9 +255,10 @@ document.getElementById('addBomberoDiaForm').addEventListener('submit', function
 
     const nombre = document.getElementById('nombreDia').value;
     const dia = document.getElementById('dia').value;
+    const turnoDiaNoche = document.getElementById('turnoDiaNoche').value;
 
     if (bomberos.porDia[dia]) {
-        bomberos.porDia[dia].push({ nombre });
+        bomberos.porDia[dia].push({ nombre, turnoDiaNoche });
     }
 
     this.reset();
