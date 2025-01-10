@@ -1,0 +1,614 @@
+body {
+    background-color: whitesmoke;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.secondaryBackground {
+    background-color: #FFCF59;
+    padding-bottom: 3vh;
+}
+
+.navbar {
+    background-color: rgb(70, 120n, 220);
+    z-index: 2;
+}
+
+.navbar-nav {
+    text-align: right; /* Alinear el texto a la derecha */
+}
+
+.navbar-brand {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.navLogo {
+    width: auto; /* La imagen ocupará toda la altura del contenedor */
+    height: 100%; /* Mantener proporción de la imagen */
+    object-fit: cover; /* Cubre todo el contenedor sin distorsión */
+}
+
+.nav-link {
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 500;
+    color: #1C1C1C;
+    text-decoration: underline #FFCF59 0.2rem;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    color: #4678dc;
+}
+
+.navbar-toggler {
+    border: 0px;
+    color: whitesmoke;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb(70, 120, 220)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.hero {
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+.hero__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 60vh;
+}
+
+.hero__img {
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    padding: 0px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__img--img {
+    width: 80%; /* La imagen ocupará toda la altura del contenedor */
+    height: auto; /* Mantener proporción de la imagen */
+    object-fit: cover; /* Cubre todo el contenedor sin distorsión */
+    position: absolute;
+}
+
+.tituloPrincipal {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1C1C1C;
+    padding-bottom: 1vh;
+}
+
+.tituloPrincipalDestacado {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: rgb(70, 120, 220);
+    padding-bottom: 2vh;
+}
+
+.tituloBajada {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #808080;
+    padding-bottom: 1vh;
+}
+
+.titulos {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1C1C1C;
+    padding-bottom: 1vh;
+    padding-top: 3vh;
+    text-align: center;
+}
+
+.bajada {
+    text-align: center;
+}
+
+.titulosDestacado {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgb(70, 120, 220);
+    padding-bottom: 1vh;
+}
+
+.general {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #1C1C1C;
+    padding-bottom: 0.5rem;
+}
+
+.white {
+    color: whitesmoke;
+}
+
+.subtitle {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1C1C1C;
+}
+
+.primaryButton {
+    background-color: #FFCF59;
+    color: #1C1C1C;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 200px;
+    width: 100%;
+}
+
+.primaryButton:hover {
+    background-color: #4678dc
+}
+
+.featuresBanner {
+    height: 15vh;
+    background-color: #4678dc;
+    color: whitesmoke;
+    padding: 8vh 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.featuresUp {
+    font-size: 2rem;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 800;
+    margin-bottom: -0.7rem;
+    text-align: center;
+}
+
+.featuresDown {
+    font-size: 1.2rem;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.features__feature {
+    font-family: "brandon-grotesque", sans-serif;
+    margin: 0px;
+    background-color: whitesmoke;
+    text-align: center;
+    margin: 1rem 0px;
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+}
+
+.features {
+    padding-bottom: 5vh;
+    text-align: center;
+}
+
+.features__feature--icon {
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+
+.featuresIcon {
+    background-color: #4678dc;
+    color: whitesmoke;
+    width: fit-content;
+    margin: 0px;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.featuresText {
+    font-family: "brandon-grotesque", sans-serif;
+}
+
+.featuresSection {
+    background-color: rgb(230, 230, 230);
+    padding-bottom: 10vh;
+}
+
+.events {
+    text-align: center;
+}
+
+.event {
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0px;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.event__img {
+    display: none;
+}
+
+.event__date {
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0px;
+}
+
+.event__place {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.event__adress {
+    font-family: "brandon-grotesque", sans-serif;
+    margin: 0px;
+}
+
+.event__hour {
+    font-family: "brandon-grotesque", sans-serif;
+    margin: 0px;
+}
+
+.event__button {
+    background-color: #4678dc;
+    color: whitesmoke;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 500;
+    font-size: larger;
+    border-radius: 8px;
+    border-width: 0px;
+    height: auto;
+}
+
+.testimonios {
+    background-color: whitesmoke;
+    font-family: "brandon-grotesque", sans-serif;
+    margin: 0px 10%;
+}
+
+.card {
+    box-shadow: 0.3rem 1rem 2rem rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background-color: whitesmoke;
+}
+
+.blog__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    max-width: 75%;
+    border: 0px solid rgba(0, 0, 0, 0.264);
+    box-shadow: 0.3rem 1rem 3rem rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin: 0px 1% 3vh 1%;
+    margin-bottom: 15%;
+    padding: 0px;
+}
+
+.blog__card--img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.blog__card--title {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-top: 5%;
+}
+
+.blog__card--text {
+    padding: 3% 7% 5% 7%;
+    margin: 0px;
+}
+
+.blog__card--button {
+    background-color: #FFCF59;
+    color: #1C1C1C;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 50%;
+    width: 100%;
+    margin-bottom: -10%;
+    position: relative;
+    white-space: nowrap;
+}
+
+.partners {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.partners__partner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.partners__partners--img {
+    width: 25%;
+    padding: 0px 0px;
+    overflow: hidden;
+    filter: grayscale(1) opacity(0.5);
+}
+
+.partners__partners--imghor {
+    width: 45%;
+    padding: 0px 0px;
+    overflow: hidden;
+    filter: grayscale(1) opacity(0.5);
+}
+
+.partners__partners--img:hover {
+    filter: grayscale(0) opacity(1);
+    transition: all 0.5s;
+}
+
+.partners__partners--imghor:hover {
+    filter: grayscale(0) opacity(1);
+    transition: all 0.5s;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #75a1fa;
+    color: whitesmoke;
+    padding-bottom: 3vh;
+}
+
+.whatsappLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-contact {
+    background-color: #25D366;
+    color: whitesmoke;
+    border: 0px;
+    border-radius: 24px;
+    padding: 0.2rem 2rem;
+    box-shadow: 0 2px 0 #888, 1px 4px 2px 
+    rgba(0,0,0,0.2);
+  color: white;
+  font-family: sans-serif;
+  font-size: .85em;
+  font-weight: 500;
+  outline: none;
+  padding: 1em 0;
+  overflow: hidden;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  width: 50%;
+}
+
+button .bi {
+    margin-right: 1rem;
+    height: 50%;
+    text-align: center;
+  }
+
+  footer {
+    background-color: #4678dc;
+    color: whitesmoke;
+    padding: 5vh 0px;
+  }
+
+  .footer-brand {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.footerLogo {
+    width: auto; 
+    height: 100%; 
+    object-fit: cover; /
+}
+
+.footerText {
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 500;
+}
+
+.footerSub {
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 500;
+    margin-top: 0.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.fab {
+    margin: 0px 0.3rem;
+}
+
+.footerLinks {
+    margin: 0px 0.5rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateX(30%);  /* El elemento está fuera del viewport a la derecha */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Añadir transición para el movimiento */
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateX(0); /* Mover el elemento a su posición original */
+}
+
+@media (min-width: 1199.98px)  {
+    .hero {
+      height: 80vh;
+    }
+    .hero__text {
+        height: 100%;
+        max-width: 40vw;
+        position: relative;
+        bottom: 10%;
+    }
+    .hero__img {
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+    }
+
+    .hero__img--img {
+        width: 100%; 
+        height: 100%;
+        object-fit: visible;
+        position: relative;
+        left: -5%;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .featuresBanner {
+        padding: 8vh 10%;
+    }
+
+    .eventsList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .event {
+        width: 50%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .event__button {
+        width: auto;
+        margin-top: 5%;
+    }
+
+    .herorow {
+        height: 100vh;
+        width: auto;
+        flex-wrap: nowrap;
+    }
+    .titulos {
+        text-align: center;
+    }
+
+    .bajada {
+        text-align: center;
+    }
+
+    .whatsapp-contact {
+        display: flex;
+        justify-content: center;
+    }
+
+   .whatsappLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .features__feature {
+    justify-content: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 40%;
+   }
+
+   .featuresIcon {
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    font-size: 2.6rem;
+    margin-right: 1rem;
+    position: relative;
+   }
+
+   .fa-solid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .featuresSection {
+    padding: 5% 5%;
+   }
+
+   .event__img {
+    display: flex;
+    height: 5rem;
+    padding: 0px 0px;
+    position: relative;
+    overflow: hidden;
+   }
+
+   .event__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: auto; 
+    object-fit: contain;
+    top: 0%;
+   }
+
+   .event__img--image {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    top: 0%;
+   }
+
+   .blog__card {
+    width: 30%;
+    margin-bottom: 10%;
+   }
+
+   .blog__card--button {
+    margin-bottom: -5%;
+    }
+
+  }

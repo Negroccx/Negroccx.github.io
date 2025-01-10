@@ -1,77 +1,321 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guadias</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
-    <script src="./js/script.js" defer></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pillar English</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zha1vip.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-    <h1>Cronograma de guardias</h1>
-    <div id="monthYear"></div>
-    <button id="prevMonth">◀️</button>
-    <button id="nextMonth">▶️</button>
-    <button id="exportar">Exportar a PDF</button>
-    
-    <div id="calendar"></div>
 
-    <h2>Lista de Bomberos</h2>
-    <div id="listaBomberos"></div>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Logo Placeholder -->
+                <a class="navbar-brand" href="#">
+                    <img class="navLogo" src="./images/PillarLogo.png" alt="">
+                </a>
 
-    <h3>Añadir Bomberos por Turno</h3>
-    <form id="addBomberoTurnoForm">
-        <input type="text" id="nombreTurno" placeholder="Nombre del Bombero" required>
-        <select id="turno">
-            <option value="1">Turno 1</option>
-            <option value="2">Turno 2</option>
-            <option value="3">Turno 3</option>
-        </select>
-        <select id="turnoDiaNoche">
-            <option value="Día">Día</option>
-            <option value="Noche">Noche</option>
-            <option value="24">24 Horas</option>
-        </select>
-        <button type="submit">Agregar</button>
-    </form>
+                <!-- Botón de menú hamburguesa en pantallas pequeñas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <h3>Añadir Bomberos por Día</h3>
-    <form id="addBomberoDiaForm">
-        <input type="text" id="nombreDia" placeholder="Nombre del Bombero" required>
-        <select id="dia">
-            <option value="lunes">Lunes</option>
-            <option value="martes">Martes</option>
-            <option value="miércoles">Miércoles</option>
-            <option value="jueves">Jueves</option>
-            <option value="viernes">Viernes</option>
-        </select>
-        <select id="turnoDiaNocheDia">
-            <option value="Día">Día</option>
-            <option value="Noche">Noche</option>
-            <option value="24">24 Horas</option>
-        </select>
-        <button type="submit">Agregar</button>
-    </form>
+                <!-- Links del menú colapsable -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto para alinear a la derecha -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobreNosotros">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#eventos">Próximos eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="hero container">
+            <div class="row herorow">
+                <div class="hero__text col-12 col-xl-6">
+                    <h1 class="tituloPrincipal">Nosotros <span class="tituloPrincipalDestacado">Conectamos</span>
+                        personas
+                        mediante el <span class="tituloPrincipalDestacado">Inglés</span> en un ambiente <span
+                            class="tituloPrincipalDestacado">divertido</span></h1>
+                    <p class="tituloBajada">En <b>Pillar English</b> nos dedicamos a organizar y conducir eventos para
+                        que
+                        pongas en práctica tu inglés mientras conocés gente, haces networking y disfrutas de un espacio
+                        divertido y relajado <b>¡Sumate y disfrutá!</b></p>
+                    <a href="#eventos" class="primaryButton">Conocé nuestros eventos</a>
+                </div>
+                <div class="hero__img col-12 col-xl-6">
+                    <img src="./images/3.webp" alt="" class="hero__img--img">
+                </div>
+            </div>
+        </section>
 
-    <h3>Añadir Bomberos por Fin de Semana</h3>
-    <form id="addBomberoFinDeSemanaForm">
-        <input type="text" id="nombreFinDeSemana" placeholder="Nombre del Bombero" required>
-        <select id="grupo">
-            <option value="A">Grupo A</option>
-            <option value="B">Grupo B</option>
-            <option value="C">Grupo C</option>
-            <option value="D">Grupo D</option>
-            <option value="E">Grupo E</option>
-        </select>
-            <select id="turnoDiaNocheFinde">
-                <option value="Día">Día</option>
-                <option value="Noche">Noche</option>
-                <option value="24">24 horas</option>
-            </select>
-        <button type="submit">Agregar</button>
-    </form>
+    </header>
+    <div class="featuresBanner">
+        <div>
+            <p class="featuresUp">20 Años</p>
+            <p class="featuresDown">en la docencia</p>
+        </div>
+        <div>
+            <p class="featuresUp">+2000</p>
+            <p class="featuresDown">Asistentes</p>
+        </div>
+    </div>
+
+    <section class="featuresSection " id="sobreNosotros">
+        <div class="container fade-in">
+            <div class="features">
+                <h2 class="titulos">¿Por qué elegir nuestros <span class="titulosDestacado">Speaking Club</span>?</h2>
+                <p class="general bajada">Entendemos que el inglés no tiene que ser aburrido ni complicado. Nuestros Speaking Clubs están diseñados para que puedas practicar inglés de manera dinámica y divertida, mientras amplías tu red de contactos profesionales.</p>
+                    <a href="https://wa.me/5491161476387" class="primaryButton">Escribinos</a>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="features__feature col-xl-6">
+                        <div class="features__feature--icon">
+                            <i class="featuresIcon fa-solid fa-face-laugh-beam"></i>
+                        </div>
+                        <div>
+                            <h4 class="subtitle">Entorno amigable</h4>
+                            <p class="general">Te ofrecemos un entorno amigable y divertido en el que desarrollamos
+                                actividades para practicar inglés y conocer gente nueva</p>
+                        </div>
+                    </div>
+                    <div class="features__feature  col-xl-6">
+                        <div class="features__feature--icon">
+                            <i class="featuresIcon fa-solid fa-circle-nodes"></i>
+                        </div>
+                        <div>
+                            <h4 class="subtitle">Orientación al networking</h4>
+                            <p class="general">Conocer a otros en un contexto divertido puede abrir puertas a nuevas
+                                oportunidades laborales y colaborativas</p>
+                        </div>
+                    </div>
+                    <div class="features__feature  col-xl-6">
+                        <div class="features__feature--icon">
+                            <i class="featuresIcon fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4 class="subtitle">Más de 10 años en la docencia</h4>
+                            <p class="general">Te ofrecemos los conocimientos pedagógicos y de manejo de grupo
+                                necesarios
+                                para brindarte la mejor experiencia</p>
+                        </div>
+                    </div>
+                    <div class="features__feature  col-xl-6">
+                        <div class="features__feature--icon">
+                            <i class="featuresIcon fa-solid fa-language"></i>
+                        </div>
+                        <div>
+                            <h4 class="subtitle">No necesitás ser un experto</h4>
+                            <p class="general">Nuestra experiencia está preparada para que cualquiera, sin importar su
+                                nivel
+                                de inglés, pueda practicarlo y relacionarse con otras personas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secondaryBackground" id="eventos">
+        <div class="container">
+            <div class="events">
+                <h2 class="titulos">Próximos <span class="titulosDestacado">Eventos</span></h2>
+                <p class="general bajada">Conocé nuestros próximos eventos y reservá tu lugar!</p>
+            </div>
+            <div class="eventsList">
+                <div class="event row">
+                    <div class="event__img col-lg-6">
+                        <img class="event__img--image" src="./images/12febrero.jpeg" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="event__date">12 de febrero</p>
+                        <p class="event__place">Negroni Pilar</p>
+                        <p class="event__adress"></p>
+                        <p class="event__hour">18hs.</p>
+                        <button class="event__button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#event1Collapse" aria-controls="event1Collapse" aria-expanded="false"
+                        aria-label="Toggle navigation">Reservá tu lugar</button>
+                    </div>
+                    <div id="event1Collapse" class="collapse mt-3">
+                        <a href="https://mpago.la/32VLgGx" target="_blank">
+                            <img src="https://http2.mlstatic.com/storage/dx-devsite/docs-assets/images/cow/cow-visual-wallet-default.es.png?v=4.32.1-hotfix-1" alt="cow-visual-wallet-default">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonios fade-in">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 col-xl-8 text-center">
+                    <h3 class="fw-bold mb-4">Testimonios</h3>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-4 mb-4 mb-md-0 d-flex"> <!-- Cambiar -->
+                    <div class="card">
+                        <div class="card-body py-4 mt-2">
+                            <div class="d-flex justify-content-center mb-4">
+                                <img src="./images/Gra.jpg" class="rounded-circle shadow-1-strong" width="100" height="100" alt="">
+                            </div>
+                            <h5 class="font-weight-bold">Graciela</h5>
+                            <p class="mb-2">
+                                <i class="fas fa-quote-left pe-2"></i>La propuesta de Pillar English me parecio distendida y divertida. Me impulsó a utilizar el idioma frente a un nuevo círculo de personas,  generando así networking. Me permitió poner en práctica mi comunicación.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 d-flex">
+                    <div class="card">
+                        <div class="card-body py-4 mt-2">
+                            <div class="d-flex justify-content-center mb-4">
+                                <img src="./images/Gabriela.jpeg" class="rounded-circle shadow-1-strong" width="100"
+                                    height="100">
+                            </div>
+                            <h5 class="font-weight-bold">Gabriela</h5>
+                            <p class="mb-2">
+                                <i class="fas fa-quote-left pe-2"></i>Me encantó la experiencia Pillar English porque te brinda la posibilidad de conocer gente y divertirte hablando inglés. Personalmente creo que es la combinación perfecta para quienes disfrutamos del idioma. Prácticas tu inglés, contactas con gente de todas las edades y rubros y expandis tu mundo. Lo recomiendo!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-0 d-flex">
+                    <div class="card">
+                        <div class="card-body py-4 mt-2">
+                            <div class="d-flex justify-content-center mb-4">
+                                <img src="./images/chris.jpg" class="rounded-circle shadow-1-strong" width="100"
+                                    height="100">
+                            </div>
+                            <h5 class="font-weight-bold">Christian</h5>
+                            <p class="mb-2">
+                                <i class="fas fa-quote-left pe-2"></i>Valoro mucho el networking y este tipo de actividades me resulta genial para conocer personas mientras practico inglés de una forma muy relajada, hace que el idioma no sea una limitación
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!--    <section class="container blog fade-in" id="blog">
+        <h2 class="titulos">Nuestras <span class="titulosDestacado">Actividades</span></h2>
+        <div class="row d-flex justify-content-center">
+            <div class="blog__card col-12 col-md-4">
+                <img src="./images/negroni.jpg" alt="" class="blog__card--img">
+                <h3 class="blog__card--title">Speaking Club</h3>
+                <p class="blog__card--text general">Lorem ipsum dolor sit amet consectetur.</p>
+                <button class="blog__card--button">Conocé más</button>
+            </div>
+            <div class="blog__card col-12 col-md-4">
+                <img src="./images/negroni.jpg" alt="" class="blog__card--img">
+                <h3 class="blog__card--title">Speaking Club</h3>
+                <p class="blog__card--text general">Lorem ipsum dolor sit amet consectetur.</p>
+                <button class="blog__card--button">Conocé más</button>
+            </div>
+            <div class="blog__card col-12 col-md-4">
+                <img src="./images/negroni.jpg" alt="" class="blog__card--img">
+                <h3 class="blog__card--title">Speaking Club</h3>
+                <p class="blog__card--text general">Lorem ipsum dolor sit amet consectetur.</p>
+                <button class="blog__card--button">Conocé más</button>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="partners">
+        <h2 class="titulos">Partners</h2>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-xl-4 partners__partner">
+                    <img src="./images/Pearson.png" class="partners__partners--imghor" alt="">
+                </div>
+                <div class="col-12 col-xl-4 partners__partner">
+                    <img src="./images/Cambridge.png" class="partners__partners--imghor" alt="">
+                </div>
+                <div class="col-12 col-xl-4 partners__partner">
+                    <img src="./images/Pok.jpg" class="partners__partners--img" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contacto white" id="contacto">
+        <div class="container">
+            <div>
+                <h2 class="titulos white">Contacto</h2>
+                <p class="general bajada white">¿Tenés alguna duda? ¿Queres hacernos una propuesta?</p>
+            </div>
+            <a href="https://wa.me/5491161476387" class="d-flex justify-content-center align-items-center">
+                <button type="button" class="whatsapp-contact">
+                    
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232">
+                        </path>
+                    </svg>
+                    Escribinos
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <footer class="d-flex justify-content-center">
+        <div class="container row">
+            <div class="col-12 col-lg-4">
+                <a class="footer-brand" href="#">
+                    <img class="footerLogo" src="./images/PillarAlt.png" alt="">
+                </a>
+            </div>
+            <!-- <p class="footerText">Lorem ipsum dolor sit amet consectetur.</p> -->
+            
+                <div class="col-6 col-lg-4 d-flex flex-column justify-content-center">
+                    <p class="footerSub d-flex justify-content-center">Seguinos</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/pillar.english/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4 d-flex flex-column justify-content-center">
+                    <p class="footerSub d-flex justify-content-center">About</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="#eventos">
+                            <span class="footerLinks">Eventos</span>
+                        </a>
+                        <a href="#contacto">
+                            <span class="footerLinks">Contacto</span>
+                        </a>
+                    </div>
+                </div>
+            
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/js.js"></script>
 </body>
+
 </html>
